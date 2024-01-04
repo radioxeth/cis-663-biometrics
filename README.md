@@ -1,2 +1,1 @@
-# cis-663-biometrics
-CIS 663 Biometrics
+# CIS 663 Biometrics
