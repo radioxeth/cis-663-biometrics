@@ -1,6 +1,6 @@
-# CIS 663 Biometrics
+# Week 10 Biometric Systems Security
 
-## Table of Contents
+## Directory
 - [Home](/README.md#table-of-contents)
 - [Week 1 Introduction to Biometrics](/week1/README.md#week-1-introduction-to-biometrics)
 - [Week 2 Workings of a Biometrics System](/week2/README.md#week-2-workings-of-a-biometrics-system)
@@ -11,4 +11,4 @@
 - [Week 7 Performance Evaluation](/week7/README.md#week-7-performance-evaluation)
 - [Week 8 Behavioral Biometrics: Keystrokes, Gait, Handwriting, Voice](/week8/README,md#week-8-behavioral-biometrics-keystrokes-gait-handwriting-voice)
 - [Week 9 Continuous Authentication](/week9/README.md#week-9-continuous-authentication)
-- [Week 10 Biometric Systems Security](/week10/README.md#week-10-biometric-systems-security)
+- **&rarr;[Week 10 Biometric Systems Security](/week10/README.md#week-10-biometric-systems-security)**
