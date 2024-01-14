@@ -179,3 +179,124 @@ From "An Introduction to Biometric Recognition" A Jain, Ross, and S Prabhakar IE
   - more than one measurement of the same biometric - for example, voice at different points of time or several images of the same face may be combined
 - multiple representation and matching algorithms for the same biometric
   - different features or different feature extraction and combination methods or different matching algorithms
+
+## Security of Biometric Systems
+- Types of Vulnerabilities and Attacks
+  - admin
+  - user
+  - enrollment spoofing
+  - bypass
+  - corruption
+  - tampering
+  - brute force attack
+  - replay
+- consequences of attacks
+  - privacy
+  - privileges
+  - financial and personal
+  - various others
+
+### Attack Levels
+- sensor level
+  - presenting a fake biometric
+- transmission between sensor and feature extractor
+  - replay of stored digital biometric signals
+- feature extractor level
+  - denial of feature extraction
+- transmission of the extracted features
+  - spoofing the biometric feature
+- classifier level
+  - attacking the matching module
+- database
+  - attacking the channel between the template database and matching module
+- transmission of the template from the database
+- decision level
+  - attacking the final decision process
+
+### Vulnerability of Biometric Systems
+
+| Biometric | Vulnerability             | Possible Solutions |
+|-----------|---------------------------|--------------------|
+| Fingerprint | Synthetic or dismembered finger | To use thermal scanners to detect the temperature. Detection of a perspiration pattern over the fingertip skin can identify the vitality of a fingerprint |
+| Voice | A tape recording of the authorized user | To use a text-dependent system (different for each trial) |
+| Iris | Prosthetic eye | Infrared system for checking veins will look at flows of warm blood |
+| Face | Face mask etc. | Facial tomography |
+
+### Frog-Boiling Attacks
+
+With the prediction set, users are clustered into four types of animals: Lamb, goat, wolf, and sheep, as described in [Doddington et al., 1998]
+
+- **Lamb**: Lambs are the users who are vulnerable to imposter attack, their FRRs are higher than others.
+- **Goat**: Goats are the users who find difficulty matching against their own template. Specifically, goats have higher FAR than other users.
+- **Wolf**: Wolves can match well against other users, therefore, there are considered “strong attackers.”
+- **Sheep**: Sheep are the users who do not belong to any of the above groups. They are the users who generally have good verification performance.
+
+
+## Future of Biometric Systems
+- physiological systems likely to stay
+- cameras and videos are ubiquitous
+  - facial, retinal, finger print to stay
+- rise of brain-computer interfaces
+- authentication biometrics
+- biometrics of devices
+- can change in color of face correlate with video
+
+## Week 1 Live Session
+
+### Requirements of Biometrics
+- universality
+- distinctiveness
+- permanence
+- collectability
+- performance
+- acceptability
+- circumvention
+
+### Verification vs Identification Mode
+
+- Verification (Authentication): Given biometric input and supposed indentity validate that the biimetric input should come from identity. Returns a Boolean (T/F)
+  - V(I,X_Q)=True if S(X_Q,X_I)>=t, false otherwise
+- Identification (recognition): given biometric input return identity (or unkown flag) that owns said biometric.
+  - Id(X_Q)= {I_k=max{S(X_Q,X_ik)}>=t, k=1,2,3...N}, I_n+1 if no match found
+
+### Biometric Systems
+1. Sensor Modules: Extracts biometric data from individual
+2. Feature Extraction Module: Extracts Features from Biometric Data
+3. Matcher Module: Compares extracted features against stored **templates**. Performs the actual decision (match, no match)
+4. Database Module: Stores captured templates for known users
+5. Enrollment Module: Enrolls users into the system. Involves ##1, ##2 and may perform quality analysis on sample. Extracts template from quality samples
+6. Pattern Recognition/Machine Learning: Offline modules that adjusts internal values to improve system accuracy.
+
+### Biometric System Errors
+
+- Imposter Distribution: the distribution of S(X_Q,X_I) (scores) where X_Q ***does not*** come from individual I
+- Genuine Distribution: the distribution of S(X_Q, X_I) (scores) where X_Q ***does*** come from individual I
+- False Match: the system returning a match between two different people
+- False Nonmatch: the system returning a nonmatch for a known user's input
+- False Match rate: Rate of False Matches
+- False Nonmatch Rate: Rate of False Nonmatches
+
+### More Error Review
+
+- H_0: input X_Q does not come from the same person as X_I (null hypothesis)
+- H_1: Input X_Q does come from the same person as X_I
+- D_0: person is not who she claims to be (system output)
+- D_1: person is who she claims to be (system output)
+
+- Type-I: false match (D_1 is decided when H_0 is true)
+- Type-II: false nonmatch (D_0 is decided when H_1 is true) FNMR: P(D_0|H_1)
+- conditional probability: $P(A|B)$=probability of A being true given we know (or assume) B is true:
+  - $P(A|B)=\frac{P(A&&B)}{P(B)}$
+
+FMR=\integral_t^infin p(S(X_Q,XI)|H_0)
+FNMR=\integral_-infin^t p(S(X_Q,XI)|H_1)
+
+### Enrollment
+
+- FTC: Failure to capture rate. Occurs when a biometric sample of sufficient quality is not being extracted
+- FTE: Failure to enroll rate. Occurs when the system rejects poor quality inputs during enrollment
+
+### FMR and FNRM in Identification
+- FNMR_N (N subscript because we assume there are N templates in the system to match against)
+  - FNMR_N FNMR (false nonmatch rate in identification)
+- FMR_N 1-(1-FMR)^N NFMR (False match rate in identification)
