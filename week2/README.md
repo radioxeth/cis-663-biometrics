@@ -12,3 +12,212 @@
 - [Week 8 Behavioral Biometrics: Keystrokes, Gait, Handwriting, Voice](/week8/README,md#week-8-behavioral-biometrics-keystrokes-gait-handwriting-voice)
 - [Week 9 Continuous Authentication](/week9/README.md#week-9-continuous-authentication)
 - [Week 10 Biometric Systems Security](/week10/README.md#week-10-biometric-systems-security)
+
+## Stages of a Biometric System
+
+- Registration (enrollment), verification, identification
+
+### Verification
+- face, iage, fingerprint, PIN, name and so on
+- quality check
+- feature processing
+- classification 
+  - system database with template
+
+```mermaid
+graph LR
+    B[Face image, fingerprint, PIN, name, and so on] --> C[Quality check]
+    C --> D[Feature processing]
+    D --> E[Classification]
+    F[System database] --> E
+    E --> G[T/F]
+    B --> H[Template]
+    I[Registration] --> H
+    H --> F
+```
+
+### Verification Process
+
+| Verification Process                           | Description |
+| --------------------------------------------- | ----------- |
+| Claimed identity \(I\). Feature vector \(X_o\). Class \(w_1\) or \(w_2\); \(t\) is a predefined threshold.                        | If the stored biometric template of the user \(I\) is \(X_i\) and the acquired template is \(X_o\), then the null and alternate hypothesis are: |
+|                         | \(H_0\): Input \(X_o\) does not come from the same person as the template \(X_i\). |
+| | \(H_1\): Input \(X_o\) comes from the same person as the template \(X_i\). |
+| Represents a similarity function.             | The decisions are: \(D_0\): Person is not who she claims to be. \(D_1\): The person is who she claims to be. |
+
+
+### Stages of an Identification System
+
+```mermaid
+graph LR
+    B[Face image, fingerprint, PIN, name, and so on] --> C[Quality check]
+    C --> D[Feature processing]
+    D --> E[Classification]
+    F[System database] --> E
+    E --> G[Identity:\none of many or none]
+    B --> H[Template]
+    I[Registration] --> H
+    H --> F
+```
+
+### Identification 
+
+| Identification Process                                   | Description |
+| -------------------------------------------------------- | ----------- |
+| Claimed identity \(I\). Feature vector \(X_o\). Class \(w_1\) or \(w_2\); \(t\) is a predefined threshold. | If the stored biometric template of the user \(I\) is \(X_i\), and the acquired template is \(X_o\), then the null and alternate hypothesis are: |
+|                                    | \(H_0\): Input \(X_o\) does not come from the same person as the template \(X_i\). |
+|  | \(H_1\): Input \(X_o\) comes from the same person as the template \(X_i\). |
+| Represents a similarity function.                        | The decisions are: \(D_0\): Person is not who she claims to be. \(D_1\): The person is who she claims to be. |
+
+
+## Sensor Overload
+
+### primary biometric sensors
+- Electrical-optical (EO) sensors
+  - visual spectrum
+  - infrared (IR)
+- LiDAR (light detection and ranging)
+- touch
+- electrocardiogram
+- others
+  - ultraviolet (UV)
+  - RaDAR (radio detection and ranging)
+  
+
+## Biometric Sensors: IR Spectrum
+- Infrared (IR) cameras
+  - passive sensors
+  - rely on infrared waves emitted frm object
+- hardware
+  - lens
+  - charged-couple device (CCD)
+- values
+  - generally monochromatic
+
+
+### Infrared Basics
+- humans cannot sense infrared with their eyes
+  - some animals (pit vipers) can, eg in the US, rattlesnakes, copperheads, and cottonmouths
+- broken in to near-, short-,  mid-, long-, and far-field infrared
+
+### Illumination Effects
+- CCDs detect light from outside sources
+- Intensity is based on  energy emitted from objects (Hotter is Brighter)
+
+### Camera Hardware
+- Lens
+  - Infrared cannot pass through glass
+  - Other materials are needed for lenses
+- CCD
+  - Digital sensor for detecting infrared waves
+    - Generally, for only small part of spectrum
+  - Cooling required for longer wave sensors
+
+### IR Pros and Cons
+- Pros
+  - Easy to model outputs
+  - computing hardware optimized for medium type like visual spectrum
+  - more robust to environmental factors (dust, water vapor)
+  - does not require illumination
+- Cons
+  - affected pose differences
+  - Expensive
+
+## Biometric Sensors: Visual Spectrum
+
+### Overview
+- visual spectrum sensors (cameras)
+  - passive sensors
+  - rely on natural or artificial illumination
+- hardware
+  - lense
+  - charged-coupled device (CCD)
+- Values
+  - monochromatic (greyscale)
+  - tricolor [usually red-green-blue (RGB)]
+
+### Visual Spectrum Basics
+- Most humans and digital camera have receptors for red, green, and blue RGB light
+  - Humans have rods
+  - Digital cameras have charged-coupled device (CCD) for each spectrum
+
+### Illumination Effects
+- CCDs detect light from outside light sources
+- Light color is based on source color and reflected/refracted materials
+### Camera Hardware
+- Lense
+  - focuses or defuses light beams
+  - Can be coupled with filters to only let certain light in
+- CCD
+  - Digital sensor for detecting light
+  - Usually on chips with red, green, and blue CCDs group together in a square pattern to emulate a pixel.
+
+### Color Schemes
+- Monochromatic (gray scale)
+  - easier to program too
+  - uses less space
+- Tricolor (RGB)
+  - more nuanced images (can mean better performance)
+  - uses more data
+
+### Visual Spectrum Pros and Cons
+- Pros
+  - sensors are cheap and ubiquitous
+  - easy to model outputs
+  - computing hardware optimized for medium type
+- Cons
+  - affected by illumination and pose difference
+  - easily affected by environment
+
+## Biometric Sensors: LiDAR
+
+### Overview
+- Lidar sensors
+  - active sensors
+  - used coupled lasers and sensors
+- hardware
+  - lens
+  - charged-coupled device (CCD)
+- Values
+  - Generally monochromatic
+
+### Lidar Basics
+- Lidar: used to mean Light Detection And Ranging
+- have active sensors that both transmit and detect light
+- usually use infrared light, but can use visual spectrum and ultraviolet (UV)
+- measure range between sensor and objects
+  - tracks time from when light was transmitted to when received
+
+### Transmitting and Receiving
+- laser sends out pulse angle and time send recorded
+- when laser is received time is recorded again and range calculated based on speed of light
+- angle adjusted
+
+### Lidar Pros and Cons
+- Pros
+  - can make 3D models of spaces
+- Cons
+  - extremely expensive
+
+## Biometric Sensors: Touchscreens
+
+### Overview
+- touch sensors
+  - passive sensors
+  - use many technologies
+- Hardware
+  - contract sensors
+- values
+  - return values
+
+
+### Touchscreen Types
+- optical scanner: takes a picture of your finger
+- capacitive scanner: use electrical scanners embedded in surface to detect touching
+- thermal scanner: uses difference in temperature between ridges and values
+
+### Touchscreen Pros and Cons
+- pros
+  - ubiquitous and cheap
+- cons
+  - common ones tend to be inaccurate
