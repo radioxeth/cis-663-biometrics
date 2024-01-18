@@ -221,3 +221,44 @@ graph LR
   - ubiquitous and cheap
 - cons
   - common ones tend to be inaccurate
+
+## Live Session
+
+Research Sources
+- Syracuse Library
+- IEEE, ACM
+- (scholar.google.com)[scholar.google.com]
+
+### ML Metrics
+
+### Machine Learning Analysis
+- for two class prediction systems (ie verification)
+  - true positive: system correctly returned True when result should be true
+  - true negative: system correctly return False when result should be false
+  - false positive: system returned true when result should be false
+  - false negative: system return false when result should be true
+- conditional positive (P) the number of true positives in data
+- conditional negative (N) the number of real negatives in the data
+
+Machine learning is bad at extrapolation
+
+### Machine Learning Metrics
+- Sensitivity/Recall/True Positive Rate:
+`TPR = TP / P = TP / (TP + FN) = 1 – FNR`
+- Specificity/Selectivity/True Negative Rate :
+`TNR: TN / N = TN / (TN + FP) = 1 – FPR`
+- Precision: 
+`PPV = TP / (TP + FP)`
+- False Positive Rate (False Alarm Rate): 
+`FPR = FP / N = 1 - PPV`
+- False Negative Rate (False Rejection Rate):
+`FNR = FN / P = 1 - TNR`
+- Accuracy = `(TP + TN) / (P + N)` (top line number)
+- `F1 = 2 * TP / (2TP + FP + FN)`
+  - with LLMs you get a lot of false negatives and negatives.
+  - want a value closer to 1
+  - below 1, you have too many FP and FN
+
+  ### Confusion Matrix
+  - accuracy 
+  - mean accuracy
