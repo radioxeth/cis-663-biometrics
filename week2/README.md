@@ -40,10 +40,10 @@ graph LR
 
 | Verification Process                           | Description |
 | --------------------------------------------- | ----------- |
-| Claimed identity \(I\). Feature vector \(X_o\). Class \(w_1\) or \(w_2\); \(t\) is a predefined threshold.                        | If the stored biometric template of the user \(I\) is \(X_i\) and the acquired template is \(X_o\), then the null and alternate hypothesis are: |
-|                         | \(H_0\): Input \(X_o\) does not come from the same person as the template \(X_i\). |
+| Claimed identity \(I\). Feature vector \(X_o\). Class \(w_1\) or \(w_2\); \(t\) is a predefined threshold. | If the stored biometric template of the user \(I\) is \(X_i\) and the acquired template is \(X_o\), then the null and alternate hypothesis are: |
+| | \(H_0\): Input \(X_o\) does not come from the same person as the template \(X_i\). |
 | | \(H_1\): Input \(X_o\) comes from the same person as the template \(X_i\). |
-| Represents a similarity function.             | The decisions are: \(D_0\): Person is not who she claims to be. \(D_1\): The person is who she claims to be. |
+| Represents a similarity function. | The decisions are: \(D_0\): Person is not who she claims to be. \(D_1\): The person is who she claims to be. |
 
 
 ### Stages of an Identification System
