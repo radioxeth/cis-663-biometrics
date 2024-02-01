@@ -324,3 +324,99 @@ The image on the right was constructed by taking a weighted summation of all the
   - malicious or not
 - detecting altered faces
   - malicious or not
+
+
+## Live Session
+
+### Feature Extraction
+
+- original image
+  - local orientation
+    - segmentation
+    - singularity detection
+  - local frequency 
+    - enhancement (improved image)
+    - minutiae extraction
+      - binarization or grayscale
+
+### Fingerprint Images
+- **Ridges**: raised curves of skin on the finger
+- **Valleys**: areas between the ridges
+- these features allow humans to better feel textures
+
+- **Singularity**: a region where ridge lines assume distinctive shapes (characterized by high curvature, frequent termination, etc)
+- three types
+  - loop
+  - delta (arch)
+  - whorl
+- **core**: a landmark or center point
+  - orientation finding
+
+### Minutiae
+- minutiae: local level features, these refer to the ways that ridges can be discontinuous
+  - there are many different discontinuous patterns. The FBI focuses only on:
+    - terminations: a ridge that ends abruptly
+    - bifurcations: a ridge that splits into two distinct ridges
+- minutiae are a tuple: {class, x, y, &theta;}
+
+### Local Ridge Orientation
+- what is it? An angle &theta; that the fingerprint ridges, crossing theough an arbitrary small neighborhood centered at [i,j] from the horizontal axis
+- how do we measure it?
+  - gradient phase angle
+  - local averaging
+  - gradient estimates
+- why do we need it?
+  - enhancement
+  - singularity detection
+
+#### Least mean square orientation
+
+### local Ridge Frequency
+- what is it? Inverse of the number of ridges per unit length along a hypothetical segment centered at [i,j] and orthogonal to the ridge orientation
+- how much white space between the ridges on a fingerprint
+
+### Enhancements
+
+- simple image enhancements can be done by applying a filter (function) to an entire image
+  - **histogram equalization** spread out gradient on 
+  - **gabor filters** have both frequency-selective and orientation-selective properties and have optimal join resolution in both spatial and frequency domains
+
+### Singularity Detection: Poincare index
+$$
+\Delta(k) = 
+\begin{cases} 
+\delta(k) & \text{if } |\delta(k)| < \frac{\pi}{2} \\
+\delta(k) + \pi & \text{if } \delta(k) \leq -\frac{\pi}{2} \\
+\delta(k) - \pi & \text{if } \delta(k) \geq \frac{\pi}{2}
+\end{cases}
+$$
+$$
+\delta(k) = \theta((k + 1)\%N) - \theta(k)
+$$
+$$
+\text{if } \sum_{k \in \{0, \ldots, 7\}} \Delta k 
+\begin{cases} 
+360, & \text{then whorl} \\
+180, & \text{then loop} \\
+-180, & \text{then delta} \\
+0, & \text{then no singularity}
+\end{cases}
+$$
+
+### Minutiae extraction
+
+- grayscale
+- binarization
+- thinning
+- image scan
+
+detect pixels that corresponds to minutiae through the pixel-wise computation of crossing numbers
+$\text{crossing number} = \frac{1}{2} \sum_{i \in \{1,\ldots,8\}} |b[i] - b[(i + 1) \mod 8]|$
+
+- crossing number of 3 is a bifurcation
+- crossing number of 1 is a termination
+- crossing number of 2 is nothing/ridge
+
+
+### Correlation Matching
+- 
