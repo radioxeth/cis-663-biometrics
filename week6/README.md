@@ -132,3 +132,45 @@ Algorithms
 - fourier transform converts from time-domain to frequency domain
 
 #### Band Pass Filters
+
+## Live Session
+
+### Face recognition steps
+- face detection
+- projection
+- database search
+
+[Principal Component Analysis](https://en.wikipedia.org/wiki/Principal_component_analysis)
+
+### Viola-jones: face detection
+- haar features
+- integral image
+  - speeds up processing by reducing the image into summed values
+- adaboost
+  - create multiple classifiers progressively weighting points as more or less well classified
+  - combine the classifiers at the end
+- cascading
+
+!!Understand principal component analysis
+
+### Iris Detection
+
+
+#### Iris Layers
+ 
+- epithelium layer
+- stromal layer
+
+```mermaid
+flowchart
+    A[Image Acquisition] --> B[Eye Image]
+    B --> C[Iris Segmentation]
+    C --> D[Iris Region]
+    D --> E[Normalization]
+    E --> F[Feature points in the iris region]
+    F --> G[Feature Encoding]
+    G --> H[Feature Matching]
+    H --> I{Identify or Reject Subject}
+    H --> J[Iris Templates Database]
+    J --> H
+```
