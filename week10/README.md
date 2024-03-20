@@ -12,3 +12,21 @@
 - [Week 8 Behavioral Biometrics: Keystrokes, Gait, Handwriting, Voice](/week8/README,md#week-8-behavioral-biometrics-keystrokes-gait-handwriting-voice)
 - [Week 9 Continuous Authentication](/week9/README.md#week-9-continuous-authentication)
 - **&rarr;[Week 10 Biometric Systems Security](/week10/README.md#week-10-biometric-systems-security)**
+
+
+## Live Session
+
+### Outlier Detection
+- Outlier: a data object that deviates significantly from the normal objects as it is an error. Not noise.
+- Global Outlier
+  - Significantly deviates from the rest of the data set
+- Contextual outlier
+  - deviates significantly based on the selected context
+- Collective Outlier
+  - a subset of data objects collectively deviated significantly from the whole data set, even if the individual data objects may not be outliers.
+  
+#### Challenges of outlier detection
+- modeling normal objects and outliers properly
+- application-specific outlier detection
+- handling noise in outlier detection
+- understandability
