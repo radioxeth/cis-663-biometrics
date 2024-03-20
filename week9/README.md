@@ -12,3 +12,24 @@
 - [Week 8 Behavioral Biometrics: Keystrokes, Gait, Handwriting, Voice](/week8/README,md#week-8-behavioral-biometrics-keystrokes-gait-handwriting-voice)
 - **&rarr;[Week 9 Continuous Authentication](/week9/README.md#week-9-continuous-authentication)**
 - [Week 10 Biometric Systems Security](/week10/README.md#week-10-biometric-systems-security)
+
+
+## Live Session
+
+Performance metrics
+
+### ROC Receiver Operating Characteristic
+
+- used in machine learning applications to asses classifiers
+- used to compare tests/procedures
+
+### Hypothesis testing refresher
+- Null hypothesis H ('straw man')
+- Alternate hypothesis A ('claim' or theory you wish to test)
+
+
+### 2D confusion matrix
+
+### Decision Cost Function
+
+DCF=Cost(FR) &times; P(client) &times; FRR + Cost(FA) &times; P(imposter) &times; FAR

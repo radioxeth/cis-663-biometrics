@@ -12,3 +12,54 @@
 - **&rarr;[Week 8 Behavioral Biometrics: Keystrokes, Gait, Handwriting, Voice](/week8/README,md#week-8-behavioral-biometrics-keystrokes-gait-handwriting-voice)**
 - [Week 9 Continuous Authentication](/week9/README.md#week-9-continuous-authentication)
 - [Week 10 Biometric Systems Security](/week10/README.md#week-10-biometric-systems-security)
+
+## Behavioral Biometrics: Keystrokes, Gait, Handwriting, Voice
+
+### Machine Learning Methods Applied to Security Domain
+
+#### Introduction
+- Keystroke based authentication
+- Authentication on mobile devices
+  - authentication
+  - data definition, feature extraction
+  - cleaning
+- BCI - brain computer interface
+
+### Keystroke Dynamics
+- An example of behavioral biometrics
+  - relatively high variability between successive samples
+  - still provides disciminability to distinguish
+  - stable over shorter time spans
+  - prone to replay attacks
+- Advantages
+  - samples can be collected remotely, for example, on the internet
+  - widespread use: desktops, laptops, and mobile devices
+  - non-intrusive
+- Choice of device, for example, desktop keyboard or mobile device can affect sample variability
+  - methods to find invariants are successful
+- useful as a second-factor in authentication
+
+### Feature Extraction, Fixed Text and Free Text
+
+- KHT: Key Hold Time
+  - KP_r - KP_s
+- KIL: Key Interval Latency
+- KPL: Key Press Latency
+
+3 people typing the same word will have different timings
+- can be second factor authentication with password
+
+<hr>
+- Fixed text: password
+- Continuous text: describe an event
+
+### Feature Cleaning
+
+#### Outlier Detection
+- Method 1
+$X\in{\{\bar{x}-w\sigma{},\bar{x}+w\sigma{}\}}$
+- Method 2
+- define a neighborhood of a feature value as region
+N= a feature vector is an outlier if fewer than &beta; values fall within the neighborhood.
+
+$x_i=\{247,476,281,250,281,265,1235\}$
